@@ -22,22 +22,44 @@ namespace LinqExercise
 
             //TODO: Print the Sum of numbers
 
+            Console.WriteLine(numbers.Sum());
+
             //TODO: Print the Average of numbers
+
+            Console.WriteLine(numbers.Average());
 
             //TODO: Order numbers in ascending order and print to the console
 
-            //TODO: Order numbers in decsending order adn print to the console
+
+
+            //IEnumerable<int> orderedNums = from num in numbers orderby num select num;
+            //orderedNums.ToList().ForEach(num => Console.WriteLine(num));
+
+
+            //TODO: Order numbers in decsending order and print to the console
+
+            IEnumerable<int> reverseNums = from num in numbers orderby num descending select num;
+            reverseNums.ToList().ForEach(num => Console.WriteLine(num));           
+
 
             //TODO: Print to the console only the numbers greater than 6
 
+            numbers.Where(x => x > 6).ToList().ForEach(x => Console.WriteLine(x));
+
             //TODO: Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
 
+            var newOrder = numbers.OrderBy(num => num);
+
             //TODO: Change the value at index 4 to your age, then print the numbers in decsending order
+
+
 
             // List of employees ****Do not remove this****
             var employees = CreateEmployees();
 
             //TODO: Print all the employees' FullName properties to the console only if their FirstName starts with a C OR an S and order this in acesnding order by FirstName.
+
+
 
             //TODO: Print all the employees' FullName and Age who are over the age 26 to the console and order this by Age first and then by FirstName in the same result.
 
